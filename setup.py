@@ -6,7 +6,7 @@ with open("requirements.txt") as f:
 setup(
 	name="hadeeda",
 	version="0.0.1",
-	description="AI-powered Chief of Staff for ERPNext with autonomous agents, skill management, SOP compliance, and intelligent automation.",
+	description="AI-powered Chief of Staff for EthioBiz with autonomous agents, skill management, SOP compliance, and intelligent automation.",
 	author="Biz Technology Solutions",
 	author_email="support@biztech.et",
 	packages=find_packages(),
