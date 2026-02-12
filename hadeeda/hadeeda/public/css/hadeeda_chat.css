@@ -1,6 +1,57 @@
 /* Custom styling for Hadeeda Chat */
 @import url('https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css');
 
+/* 1. Hide the default n8n floating bubble */
+.n8n-chat-widget-button {
+    display: none !important;
+}
+
+/* 2. Position the chat window at the top-right (dropped downward from navbar) */
 .n8n-chat-widget {
-    z-index: 1050 !important; /* Above Desk modals and sidebars */
+    z-index: 1050 !important;
+    position: fixed !important;
+    top: 60px !important;
+    /* Below navbar */
+    right: 20px !important;
+    bottom: 80px !important;
+    /* Leave space at bottom */
+    left: auto !important;
+    height: calc(100vh - 140px) !important;
+    width: 400px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: rgba(15, 15, 15, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+
+    /* Hidden by default */
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(-20px) !important;
+    transition: all 0.3s ease !important;
+}
+
+.n8n-chat-widget.hadeeda-chat-visible {
+    opacity: 1 !important;
+    pointer-events: all !important;
+    transform: translateY(0) !important;
+}
+
+/* 3. Style the navbar button */
+#hadeeda-chat-toggle {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    height: 100%;
+}
+
+.hadeeda-icon {
+    filter: drop-shadow(0 0 5px #0d6efd);
+    transition: transform 0.2s ease;
+}
+
+#hadeeda-chat-toggle:hover .hadeeda-icon {
+    transform: scale(1.2);
 }
