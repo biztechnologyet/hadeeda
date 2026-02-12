@@ -1,0 +1,92 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "skill",
+        "version",
+        "is_stable",
+        "column_break_1",
+        "created_by",
+        "created_on",
+        "section_break_1",
+        "changelog",
+        "code_snapshot"
+    ],
+    "fields": [
+        {
+            "fieldname": "skill",
+            "fieldtype": "Link",
+            "label": "Skill",
+            "options": "HDA Skill",
+            "reqd": 1
+        },
+        {
+            "fieldname": "version",
+            "fieldtype": "Data",
+            "label": "Version",
+            "reqd": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "is_stable",
+            "fieldtype": "Check",
+            "label": "Is Stable"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "created_by",
+            "fieldtype": "Link",
+            "label": "Created By",
+            "options": "User"
+        },
+        {
+            "fieldname": "created_on",
+            "fieldtype": "Datetime",
+            "label": "Created On"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "changelog",
+            "fieldtype": "Text",
+            "label": "Changelog"
+        },
+        {
+            "fieldname": "code_snapshot",
+            "fieldtype": "Code",
+            "label": "Code Snapshot",
+            "options": "Python"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Skill Version",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

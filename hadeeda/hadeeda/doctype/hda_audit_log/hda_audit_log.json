@@ -1,0 +1,122 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "timestamp",
+        "action",
+        "doctype_name",
+        "docname",
+        "column_break_1",
+        "user",
+        "agent",
+        "ip_address",
+        "section_break_1",
+        "changes",
+        "user_agent",
+        "section_break_2",
+        "skill_name",
+        "sop_name"
+    ],
+    "fields": [
+        {
+            "fieldname": "timestamp",
+            "fieldtype": "Datetime",
+            "label": "Timestamp",
+            "reqd": 1
+        },
+        {
+            "fieldname": "action",
+            "fieldtype": "Select",
+            "label": "Action",
+            "options": "Read\nCreate\nUpdate\nDelete\nExecute\nEscalate\nSkill Invocation",
+            "reqd": 1
+        },
+        {
+            "fieldname": "doctype_name",
+            "fieldtype": "Data",
+            "label": "DocType"
+        },
+        {
+            "fieldname": "docname",
+            "fieldtype": "Data",
+            "label": "DocName"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "user",
+            "fieldtype": "Link",
+            "label": "User",
+            "options": "User"
+        },
+        {
+            "fieldname": "agent",
+            "fieldtype": "Link",
+            "label": "Agent",
+            "options": "HDA Agent"
+        },
+        {
+            "fieldname": "ip_address",
+            "fieldtype": "Data",
+            "label": "IP Address"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "changes",
+            "fieldtype": "JSON",
+            "label": "Changes"
+        },
+        {
+            "fieldname": "user_agent",
+            "fieldtype": "Text",
+            "label": "User Agent"
+        },
+        {
+            "fieldname": "section_break_2",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "skill_name",
+            "fieldtype": "Link",
+            "label": "Skill Name",
+            "options": "HDA Skill"
+        },
+        {
+            "fieldname": "sop_name",
+            "fieldtype": "Link",
+            "label": "SOP Name",
+            "options": "HDA SOP Document"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Audit Log",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 0
+}

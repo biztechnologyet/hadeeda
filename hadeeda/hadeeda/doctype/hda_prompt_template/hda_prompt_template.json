@@ -1,0 +1,105 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "template_name",
+        "purpose",
+        "model_preference",
+        "column_break_1",
+        "temperature",
+        "max_tokens",
+        "skill_related",
+        "section_break_1",
+        "template",
+        "variables",
+        "expected_output_format"
+    ],
+    "fields": [
+        {
+            "fieldname": "template_name",
+            "fieldtype": "Data",
+            "label": "Template Name",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "purpose",
+            "fieldtype": "Select",
+            "label": "Purpose",
+            "options": "Task Execution\nAnalysis\nSummarization\nCreative\nCode Generation\nSkill Selection\nSOP Recommendation",
+            "reqd": 1
+        },
+        {
+            "fieldname": "model_preference",
+            "fieldtype": "Select",
+            "label": "Model Preference",
+            "options": "GPT-4\nClaude 3\nLocal Model\nCustom"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "0.7",
+            "fieldname": "temperature",
+            "fieldtype": "Float",
+            "label": "Temperature"
+        },
+        {
+            "fieldname": "max_tokens",
+            "fieldtype": "Int",
+            "label": "Max Tokens"
+        },
+        {
+            "fieldname": "skill_related",
+            "fieldtype": "Link",
+            "label": "Related Skill",
+            "options": "HDA Skill"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "template",
+            "fieldtype": "Text Editor",
+            "label": "Prompt Template"
+        },
+        {
+            "fieldname": "variables",
+            "fieldtype": "JSON",
+            "label": "Variables"
+        },
+        {
+            "fieldname": "expected_output_format",
+            "fieldtype": "JSON",
+            "label": "Expected Output Format"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Prompt Template",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

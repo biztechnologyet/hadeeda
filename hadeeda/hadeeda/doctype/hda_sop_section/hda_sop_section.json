@@ -1,0 +1,110 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "section_title",
+        "section_order",
+        "estimated_time_minutes",
+        "column_break_1",
+        "responsible_role",
+        "sop_skill_required",
+        "section_break_1",
+        "content",
+        "error_handling",
+        "section_break_2",
+        "attachments",
+        "checklist",
+        "input_fields"
+    ],
+    "fields": [
+        {
+            "fieldname": "section_title",
+            "fieldtype": "Data",
+            "label": "Section Title",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "section_order",
+            "fieldtype": "Int",
+            "label": "Order",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "estimated_time_minutes",
+            "fieldtype": "Int",
+            "label": "Est. Time (Min)"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "responsible_role",
+            "fieldtype": "Link",
+            "label": "Responsible Role",
+            "options": "Role"
+        },
+        {
+            "fieldname": "sop_skill_required",
+            "fieldtype": "Link",
+            "label": "Required Skill",
+            "options": "HDA Skill"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "content",
+            "fieldtype": "Text Editor",
+            "label": "Content"
+        },
+        {
+            "fieldname": "error_handling",
+            "fieldtype": "Text",
+            "label": "Error Handling"
+        },
+        {
+            "fieldname": "section_break_2",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "attachments",
+            "fieldtype": "JSON",
+            "label": "Attachments"
+        },
+        {
+            "fieldname": "checklist",
+            "fieldtype": "JSON",
+            "label": "Checklist"
+        },
+        {
+            "fieldname": "input_fields",
+            "fieldtype": "JSON",
+            "label": "Input Fields"
+        },
+        {
+            "fieldname": "parent_sop",
+            "fieldtype": "Link",
+            "label": "Parent SOP",
+            "options": "HDA SOP Document",
+            "hidden": 1
+        }
+    ],
+    "istable": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA SOP Section",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

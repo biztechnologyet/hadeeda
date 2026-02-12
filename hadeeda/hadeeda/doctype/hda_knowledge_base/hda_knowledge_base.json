@@ -1,0 +1,119 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "title",
+        "category",
+        "is_active",
+        "column_break_1",
+        "source",
+        "last_updated",
+        "section_break_1",
+        "content",
+        "access_roles",
+        "section_break_2",
+        "embedding_id",
+        "linked_skill",
+        "linked_sop"
+    ],
+    "fields": [
+        {
+            "fieldname": "title",
+            "fieldtype": "Data",
+            "label": "Title",
+            "reqd": 1,
+            "length": 140
+        },
+        {
+            "fieldname": "category",
+            "fieldtype": "Select",
+            "label": "Category",
+            "options": "Company Policy\nERP Process\nCustomer Info\nProduct Knowledge\nLocal Regulations\nEthiopian Business Law\nSkills\nSOPs",
+            "reqd": 1
+        },
+        {
+            "default": "1",
+            "fieldname": "is_active",
+            "fieldtype": "Check",
+            "label": "Is Active"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "source",
+            "fieldtype": "Select",
+            "label": "Source",
+            "options": "Manual\nAuto-generated\nDocument\nConversation\nSkill",
+            "default": "Manual"
+        },
+        {
+            "fieldname": "last_updated",
+            "fieldtype": "Datetime",
+            "label": "Last Updated"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "content",
+            "fieldtype": "Text Editor",
+            "label": "Content"
+        },
+        {
+            "fieldname": "access_roles",
+            "fieldtype": "JSON",
+            "label": "Access Roles"
+        },
+        {
+            "fieldname": "section_break_2",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "embedding_id",
+            "fieldtype": "Data",
+            "label": "Embedding ID",
+            "read_only": 1
+        },
+        {
+            "fieldname": "linked_skill",
+            "fieldtype": "Link",
+            "label": "Linked Skill",
+            "options": "HDA Skill"
+        },
+        {
+            "fieldname": "linked_sop",
+            "fieldtype": "Link",
+            "label": "Linked SOP",
+            "options": "HDA SOP Document"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Knowledge Base",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

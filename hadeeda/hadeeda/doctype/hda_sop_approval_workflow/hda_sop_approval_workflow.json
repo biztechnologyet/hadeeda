@@ -1,0 +1,119 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "sop_document",
+        "stage",
+        "approver",
+        "approver_role",
+        "column_break_1",
+        "status",
+        "action_date",
+        "due_date",
+        "section_break_1",
+        "comments",
+        "ai_suggested",
+        "escalated_to",
+        "reminder_sent"
+    ],
+    "fields": [
+        {
+            "fieldname": "sop_document",
+            "fieldtype": "Link",
+            "label": "SOP Document",
+            "options": "HDA SOP Document",
+            "reqd": 1
+        },
+        {
+            "fieldname": "stage",
+            "fieldtype": "Int",
+            "label": "Stage"
+        },
+        {
+            "fieldname": "approver",
+            "fieldtype": "Link",
+            "label": "Approver",
+            "options": "User"
+        },
+        {
+            "fieldname": "approver_role",
+            "fieldtype": "Link",
+            "label": "Approver Role",
+            "options": "Role"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Pending\nApproved\nRejected\nSkipped",
+            "default": "Pending"
+        },
+        {
+            "fieldname": "action_date",
+            "fieldtype": "Datetime",
+            "label": "Action Date"
+        },
+        {
+            "fieldname": "due_date",
+            "fieldtype": "Date",
+            "label": "Due Date"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "comments",
+            "fieldtype": "Text",
+            "label": "Comments"
+        },
+        {
+            "default": "0",
+            "fieldname": "ai_suggested",
+            "fieldtype": "Check",
+            "label": "AI Suggested"
+        },
+        {
+            "fieldname": "escalated_to",
+            "fieldtype": "Link",
+            "label": "Escalated To",
+            "options": "User"
+        },
+        {
+            "default": "0",
+            "fieldname": "reminder_sent",
+            "fieldtype": "Check",
+            "label": "Reminder Sent"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA SOP Approval Workflow",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

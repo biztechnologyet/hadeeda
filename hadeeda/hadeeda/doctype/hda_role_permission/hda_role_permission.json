@@ -1,0 +1,93 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "role",
+        "doctype_name",
+        "data_scope",
+        "column_break_1",
+        "auto_approve_threshold",
+        "section_break_1",
+        "allowed_agents",
+        "restricted_fields",
+        "skill_access"
+    ],
+    "fields": [
+        {
+            "fieldname": "role",
+            "fieldtype": "Link",
+            "label": "Role",
+            "options": "Role",
+            "reqd": 1
+        },
+        {
+            "fieldname": "doctype_name",
+            "fieldtype": "Link",
+            "label": "DocType",
+            "options": "DocType",
+            "reqd": 1
+        },
+        {
+            "fieldname": "data_scope",
+            "fieldtype": "Select",
+            "label": "Data Scope",
+            "options": "All\nOwn\nCustomer\nSupplier\nCustom",
+            "default": "All"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "auto_approve_threshold",
+            "fieldtype": "Currency",
+            "label": "Auto Approve Threshold"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "allowed_agents",
+            "fieldtype": "JSON",
+            "label": "Allowed Agents"
+        },
+        {
+            "fieldname": "restricted_fields",
+            "fieldtype": "JSON",
+            "label": "Restricted Fields"
+        },
+        {
+            "fieldname": "skill_access",
+            "fieldtype": "JSON",
+            "label": "Skill Access"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Role Permission",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1,
+    "title_field": "role"
+}

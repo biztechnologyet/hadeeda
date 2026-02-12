@@ -1,0 +1,158 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "sop_document",
+        "employee",
+        "training_method",
+        "column_break_1",
+        "status",
+        "assignment_date",
+        "due_date",
+        "completion_date",
+        "section_break_1",
+        "assigned_by",
+        "trainer",
+        "section_break_2",
+        "assessment_score",
+        "feedback",
+        "skill_acquired",
+        "hours_spent",
+        "section_break_3",
+        "certificate_issued",
+        "certificate"
+    ],
+    "fields": [
+        {
+            "fieldname": "sop_document",
+            "fieldtype": "Link",
+            "label": "SOP Document",
+            "options": "HDA SOP Document",
+            "reqd": 1
+        },
+        {
+            "fieldname": "employee",
+            "fieldtype": "Link",
+            "label": "Employee",
+            "options": "Employee",
+            "reqd": 1
+        },
+        {
+            "fieldname": "training_method",
+            "fieldtype": "Select",
+            "label": "Training Method",
+            "options": "Self-study\nTraining Session\nOn-the-job\nWorkshop\nWebinar",
+            "default": "Self-study"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Assigned\nIn Progress\nCompleted\nOverdue\nExpired",
+            "default": "Assigned"
+        },
+        {
+            "fieldname": "assignment_date",
+            "fieldtype": "Date",
+            "label": "Assignment Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "due_date",
+            "fieldtype": "Date",
+            "label": "Due Date"
+        },
+        {
+            "fieldname": "completion_date",
+            "fieldtype": "Date",
+            "label": "Completion Date"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "assigned_by",
+            "fieldtype": "Link",
+            "label": "Assigned By",
+            "options": "User",
+            "reqd": 1
+        },
+        {
+            "fieldname": "trainer",
+            "fieldtype": "Link",
+            "label": "Trainer",
+            "options": "User"
+        },
+        {
+            "fieldname": "section_break_2",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "assessment_score",
+            "fieldtype": "Float",
+            "label": "Assessment Score"
+        },
+        {
+            "fieldname": "feedback",
+            "fieldtype": "Text",
+            "label": "Feedback"
+        },
+        {
+            "fieldname": "skill_acquired",
+            "fieldtype": "Link",
+            "label": "Skill Acquired",
+            "options": "HDA Skill"
+        },
+        {
+            "fieldname": "hours_spent",
+            "fieldtype": "Float",
+            "label": "Hours Spent"
+        },
+        {
+            "fieldname": "section_break_3",
+            "fieldtype": "Section Break"
+        },
+        {
+            "default": "0",
+            "fieldname": "certificate_issued",
+            "fieldtype": "Check",
+            "label": "Certificate Issued"
+        },
+        {
+            "fieldname": "certificate",
+            "fieldtype": "Attach",
+            "label": "Certificate"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA SOP Training Assignment",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

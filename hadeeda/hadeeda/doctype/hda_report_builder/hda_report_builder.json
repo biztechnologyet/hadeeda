@@ -1,0 +1,107 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "report_name",
+        "based_on_doctype",
+        "auto_generate",
+        "section_break_1",
+        "columns",
+        "filters",
+        "section_break_2",
+        "group_by",
+        "order_by",
+        "section_break_3",
+        "chart_config",
+        "shared_with"
+    ],
+    "fields": [
+        {
+            "fieldname": "report_name",
+            "fieldtype": "Data",
+            "label": "Report Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "based_on_doctype",
+            "fieldtype": "Link",
+            "label": "Based On DocType",
+            "options": "DocType",
+            "reqd": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "auto_generate",
+            "fieldtype": "Check",
+            "label": "Auto Generate"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "columns",
+            "fieldtype": "JSON",
+            "label": "Columns"
+        },
+        {
+            "fieldname": "filters",
+            "fieldtype": "JSON",
+            "label": "Filters"
+        },
+        {
+            "fieldname": "section_break_2",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "group_by",
+            "fieldtype": "Data",
+            "label": "Group By"
+        },
+        {
+            "fieldname": "order_by",
+            "fieldtype": "Data",
+            "label": "Order By"
+        },
+        {
+            "fieldname": "section_break_3",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "chart_config",
+            "fieldtype": "JSON",
+            "label": "Chart Configuration"
+        },
+        {
+            "fieldname": "shared_with",
+            "fieldtype": "JSON",
+            "label": "Shared With"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Report Builder",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

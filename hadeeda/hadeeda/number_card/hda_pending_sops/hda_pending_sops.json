@@ -1,0 +1,22 @@
+{
+    "aggregate_function_based_on": "",
+    "creation": "2024-05-20 10:00:00.000000",
+    "docstatus": 0,
+    "doctype": "Number Card",
+    "document_type": "HDA SOP Document",
+    "dynamic_filters_json": "[]",
+    "filters_json": "[[\"HDA SOP Document\",\"status\",\"=\",\"Draft\",false]]",
+    "function": "Count",
+    "idx": 0,
+    "is_public": 1,
+    "is_standard": 1,
+    "label": "Pending SOPs",
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Pending SOPs",
+    "owner": "Administrator",
+    "show_percentage_stats": 1,
+    "stats_time_interval": "Monthly",
+    "type": "Document Type"
+}

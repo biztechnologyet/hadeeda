@@ -1,0 +1,163 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-05-20 10:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "agent_name",
+  "role",
+  "is_active",
+  "priority",
+  "column_break_1",
+  "ai_model",
+  "permissions_level",
+  "max_daily_calls",
+  "fallback_agent",
+  "section_break_1",
+  "description",
+  "system_prompt",
+  "allowed_tools",
+  "tab_allowed_doctypes",
+  "allowed_doctypes",
+  "tab_enabled_skills",
+  "enabled_skills",
+  "tab_auto_assign",
+  "auto_assign_rules"
+ ],
+ "fields": [
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "label": "Agent Name",
+   "reqd": 1,
+   "unique": 1,
+   "length": 140
+  },
+  {
+   "fieldname": "role",
+   "fieldtype": "Select",
+   "label": "Role",
+   "options": "CEO Assistant\nFinance Agent\nHR Agent\nSales Agent\nProcurement Agent\nProject Agent\nHelpdesk Agent\nCustom\nSkills Agent\nSOP Agent",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "default": "5",
+   "fieldname": "priority",
+   "fieldtype": "Int",
+   "label": "Priority (1-10)"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ai_model",
+   "fieldtype": "Select",
+   "label": "AI Model",
+   "options": "GPT-4\nClaude 3\nLocal Model\nCustom",
+   "default": "GPT-4"
+  },
+  {
+   "fieldname": "permissions_level",
+   "fieldtype": "Select",
+   "label": "Permissions Level",
+   "options": "Read\nCreate\nSubmit\nCancel\nDelete",
+   "default": "Read"
+  },
+  {
+   "fieldname": "max_daily_calls",
+   "fieldtype": "Int",
+   "label": "Max Daily Calls",
+   "default": 100
+  },
+  {
+   "fieldname": "fallback_agent",
+   "fieldtype": "Link",
+   "label": "Fallback Agent",
+   "options": "HDA Agent"
+  },
+  {
+   "fieldname": "section_break_1",
+   "fieldtype": "Section Break",
+   "label": "Configuration"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "system_prompt",
+   "fieldtype": "Text Editor",
+   "label": "System Prompt"
+  },
+  {
+   "fieldname": "allowed_tools",
+   "fieldtype": "Small Text",
+   "label": "Allowed Tools"
+  },
+  {
+   "fieldname": "tab_allowed_doctypes",
+   "fieldtype": "Tab Break",
+   "label": "Allowed DocTypes"
+  },
+  {
+   "fieldname": "allowed_doctypes",
+   "fieldtype": "Table MultiSelect",
+   "label": "Allowed DocTypes",
+   "options": "HDA Agent Allowed Doctype"
+  },
+  {
+   "fieldname": "tab_enabled_skills",
+   "fieldtype": "Tab Break",
+   "label": "Enabled Skills"
+  },
+  {
+   "fieldname": "enabled_skills",
+   "fieldtype": "Table MultiSelect",
+   "label": "Enabled Skills",
+   "options": "HDA Agent Enabled Skill"
+  },
+  {
+   "fieldname": "tab_auto_assign",
+   "fieldtype": "Tab Break",
+   "label": "Auto Assign Rules"
+  },
+  {
+   "fieldname": "auto_assign_rules",
+   "fieldtype": "JSON",
+   "label": "Auto Assign Rules"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-05-20 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Hadeeda",
+ "name": "HDA Agent",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

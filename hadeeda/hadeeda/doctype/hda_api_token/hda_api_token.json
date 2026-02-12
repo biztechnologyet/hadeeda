@@ -1,0 +1,92 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "token_name",
+        "user",
+        "is_active",
+        "column_break_1",
+        "expiry",
+        "last_used",
+        "section_break_1",
+        "token",
+        "scope"
+    ],
+    "fields": [
+        {
+            "fieldname": "token_name",
+            "fieldtype": "Data",
+            "label": "Token Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "user",
+            "fieldtype": "Link",
+            "label": "User",
+            "options": "User",
+            "reqd": 1
+        },
+        {
+            "default": "1",
+            "fieldname": "is_active",
+            "fieldtype": "Check",
+            "label": "Is Active"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "expiry",
+            "fieldtype": "Datetime",
+            "label": "Expiry"
+        },
+        {
+            "fieldname": "last_used",
+            "fieldtype": "Datetime",
+            "label": "Last Used",
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "token",
+            "fieldtype": "Password",
+            "label": "Token",
+            "read_only": 1
+        },
+        {
+            "fieldname": "scope",
+            "fieldtype": "JSON",
+            "label": "Scope (Permissions)"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA API Token",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

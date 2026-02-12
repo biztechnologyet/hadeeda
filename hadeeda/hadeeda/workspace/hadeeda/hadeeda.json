@@ -1,0 +1,126 @@
+{
+    "charts": [
+        {
+            "chart_name": "HDA Task Completion Trend",
+            "label": "Task Completion Trend"
+        }
+    ],
+    "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Hadeeda AI Chief of Staff\",\"level\":1,\"col\":12}},{\"type\":\"card\",\"data\":{\"card_name\":\"HDA Total Agents\",\"col\":4}},{\"type\":\"card\",\"data\":{\"card_name\":\"HDA Pending SOPs\",\"col\":4}},{\"type\":\"chart\",\"data\":{\"chart_name\":\"HDA Task Completion Trend\",\"col\":12}}]",
+    "creation": "2024-05-20 10:00:00.000000",
+    "custom_block": [],
+    "docstatus": 0,
+    "doctype": "Workspace",
+    "for_user": "",
+    "hide_custom": 0,
+    "icon": "hda-icon",
+    "idx": 0,
+    "indicator_color": "",
+    "is_hidden": 0,
+    "label": "Hadeeda",
+    "links": [
+        {
+            "label": "Agents",
+            "links": [
+                {
+                    "label": "Agents",
+                    "link_to": "HDA Agent",
+                    "link_type": "DocType"
+                },
+                {
+                    "label": "Conversations",
+                    "link_to": "HDA Agent Conversation",
+                    "link_type": "DocType"
+                },
+                {
+                    "label": "Task Assignments",
+                    "link_to": "HDA Task Assignment",
+                    "link_type": "DocType"
+                }
+            ],
+            "type": "Card Break"
+        },
+        {
+            "label": "Skills",
+            "links": [
+                {
+                    "label": "Skill Marketplace",
+                    "link_to": "HDA Skill Marketplace",
+                    "link_type": "DocType"
+                },
+                {
+                    "label": "Skills",
+                    "link_to": "HDA Skill",
+                    "link_type": "DocType"
+                },
+                {
+                    "label": "Categories",
+                    "link_to": "HDA Skill Category",
+                    "link_type": "DocType"
+                }
+            ],
+            "type": "Card Break"
+        },
+        {
+            "label": "SOPs",
+            "links": [
+                {
+                    "label": "SOP Documents",
+                    "link_to": "HDA SOP Document",
+                    "link_type": "DocType"
+                },
+                {
+                    "label": "Compliance Checks",
+                    "link_to": "HDA SOP Compliance Check",
+                    "link_type": "DocType"
+                },
+                {
+                    "label": "Training Assignments",
+                    "link_to": "HDA SOP Training Assignment",
+                    "link_type": "DocType"
+                }
+            ],
+            "type": "Card Break"
+        },
+        {
+            "label": "Dashboards",
+            "links": [
+                {
+                    "label": "Executive Dashboard",
+                    "link_to": "HDA Executive Dashboard",
+                    "link_type": "DocType"
+                },
+                {
+                    "label": "Insights",
+                    "link_to": "HDA Insight",
+                    "link_type": "DocType"
+                }
+            ],
+            "type": "Card Break"
+        }
+    ],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "Hadeeda",
+    "number_cards": [
+        {
+            "label": "Total Agents",
+            "number_card_name": "HDA Total Agents"
+        },
+        {
+            "label": "Pending SOPs",
+            "number_card_name": "HDA Pending SOPs"
+        }
+    ],
+    "owner": "Administrator",
+    "parent_page": "",
+    "public": 1,
+    "roles": [
+        {
+            "role": "System Manager"
+        }
+    ],
+    "sequence_id": 1.0,
+    "shortcuts": [],
+    "title": "Hadeeda"
+}

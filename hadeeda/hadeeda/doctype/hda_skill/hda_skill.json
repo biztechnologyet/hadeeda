@@ -1,0 +1,165 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "skill_name",
+        "skill_id",
+        "version",
+        "category",
+        "column_break_1",
+        "is_active",
+        "is_system",
+        "owner_name",
+        "section_break_1",
+        "description",
+        "section_break_2",
+        "parameters",
+        "return_type",
+        "section_break_3",
+        "implementation_type",
+        "python_code",
+        "api_endpoint",
+        "workflow",
+        "requirements"
+    ],
+    "fields": [
+        {
+            "fieldname": "skill_name",
+            "fieldtype": "Data",
+            "label": "Skill Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "skill_id",
+            "fieldtype": "Data",
+            "label": "Skill ID",
+            "reqd": 1,
+            "unique": 1,
+            "read_only": 1
+        },
+        {
+            "fieldname": "version",
+            "fieldtype": "Data",
+            "label": "Version",
+            "default": "1.0.0"
+        },
+        {
+            "fieldname": "category",
+            "fieldtype": "Link",
+            "label": "Category",
+            "options": "HDA Skill Category"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "1",
+            "fieldname": "is_active",
+            "fieldtype": "Check",
+            "label": "Is Active"
+        },
+        {
+            "default": "0",
+            "fieldname": "is_system",
+            "fieldtype": "Check",
+            "label": "Is System Skill"
+        },
+        {
+            "fieldname": "owner_name",
+            "fieldtype": "Link",
+            "label": "Owner",
+            "options": "User"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Text Editor",
+            "label": "Description"
+        },
+        {
+            "fieldname": "section_break_2",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "parameters",
+            "fieldtype": "Table",
+            "label": "Parameters",
+            "options": "HDA Skill Parameter"
+        },
+        {
+            "fieldname": "return_type",
+            "fieldtype": "Select",
+            "label": "Return Type",
+            "options": "String\nJSON\nBoolean\nNumber\nFile\nNone",
+            "default": "JSON"
+        },
+        {
+            "fieldname": "section_break_3",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "implementation_type",
+            "fieldtype": "Select",
+            "label": "Implementation Type",
+            "options": "Python Code\nAPI Call\nWorkflow",
+            "default": "Python Code"
+        },
+        {
+            "fieldname": "python_code",
+            "fieldtype": "Code",
+            "label": "Python Code",
+            "depends_on": "eval:doc.implementation_type=='Python Code'",
+            "options": "Python"
+        },
+        {
+            "fieldname": "api_endpoint",
+            "fieldtype": "Link",
+            "label": "API Endpoint",
+            "depends_on": "eval:doc.implementation_type=='API Call'",
+            "options": "HDA External Integration"
+        },
+        {
+            "fieldname": "workflow",
+            "fieldtype": "Link",
+            "label": "Workflow",
+            "depends_on": "eval:doc.implementation_type=='Workflow'",
+            "options": "HDA Approval Workflow"
+        },
+        {
+            "fieldname": "requirements",
+            "fieldtype": "Text",
+            "label": "Dependencies / Requirements"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Skill",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1,
+    "title_field": "skill_name"
+}

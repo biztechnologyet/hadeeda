@@ -1,0 +1,126 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "widget_title",
+        "widget_type",
+        "doctype_name",
+        "ai_suggested",
+        "column_break_1",
+        "assigned_to",
+        "width",
+        "height",
+        "section_break_1",
+        "filters",
+        "aggregation",
+        "color",
+        "position_x",
+        "position_y"
+    ],
+    "fields": [
+        {
+            "fieldname": "widget_title",
+            "fieldtype": "Data",
+            "label": "Widget Title",
+            "reqd": 1
+        },
+        {
+            "fieldname": "widget_type",
+            "fieldtype": "Select",
+            "label": "Widget Type",
+            "options": "Number Card\nChart\nGraph\nFilter\nQuick List\nCustom\nSkill Status\nSOP Compliance",
+            "reqd": 1
+        },
+        {
+            "fieldname": "doctype_name",
+            "fieldtype": "Link",
+            "label": "DocType",
+            "options": "DocType"
+        },
+        {
+            "default": "0",
+            "fieldname": "ai_suggested",
+            "fieldtype": "Check",
+            "label": "AI Suggested"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "assigned_to",
+            "fieldtype": "Link",
+            "label": "Assigned To",
+            "options": "User"
+        },
+        {
+            "default": "12",
+            "fieldname": "width",
+            "fieldtype": "Int",
+            "label": "Width (1-12)"
+        },
+        {
+            "default": "1",
+            "fieldname": "height",
+            "fieldtype": "Int",
+            "label": "Height"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "filters",
+            "fieldtype": "JSON",
+            "label": "Filters"
+        },
+        {
+            "fieldname": "aggregation",
+            "fieldtype": "Select",
+            "label": "Aggregation",
+            "options": "Count\nSum\nAvg\nMin\nMax"
+        },
+        {
+            "fieldname": "color",
+            "fieldtype": "Select",
+            "label": "Color",
+            "options": "blue\nred\ngreen\nyellow\ncyan\npurple\norange\nblack\ngray"
+        },
+        {
+            "fieldname": "position_x",
+            "fieldtype": "Int",
+            "label": "Position X"
+        },
+        {
+            "fieldname": "position_y",
+            "fieldtype": "Int",
+            "label": "Position Y"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Dashboard Widget",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

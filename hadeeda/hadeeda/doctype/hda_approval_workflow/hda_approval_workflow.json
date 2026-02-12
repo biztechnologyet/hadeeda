@@ -1,0 +1,105 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "document_type",
+        "document_name",
+        "approval_stage",
+        "required_agent",
+        "column_break_1",
+        "fallback_human",
+        "timeout_hours",
+        "approval_threshold",
+        "auto_approve",
+        "section_break_1",
+        "conditions"
+    ],
+    "fields": [
+        {
+            "fieldname": "document_type",
+            "fieldtype": "Select",
+            "label": "Document Type",
+            "options": "Purchase Order\nSales Order\nLeave Application\nExpense Claim\nProject Budget\nCustom",
+            "reqd": 1
+        },
+        {
+            "fieldname": "document_name",
+            "fieldtype": "Dynamic Link",
+            "label": "Document Name",
+            "options": "document_type"
+        },
+        {
+            "fieldname": "approval_stage",
+            "fieldtype": "Int",
+            "label": "Approval Stage",
+            "default": 1
+        },
+        {
+            "fieldname": "required_agent",
+            "fieldtype": "Link",
+            "label": "Required Agent",
+            "options": "HDA Agent"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "fallback_human",
+            "fieldtype": "Link",
+            "label": "Fallback Human",
+            "options": "User"
+        },
+        {
+            "fieldname": "timeout_hours",
+            "fieldtype": "Int",
+            "label": "Timeout (Hours)"
+        },
+        {
+            "fieldname": "approval_threshold",
+            "fieldtype": "Currency",
+            "label": "Approval Threshold"
+        },
+        {
+            "default": "0",
+            "fieldname": "auto_approve",
+            "fieldtype": "Check",
+            "label": "Auto Approve"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "conditions",
+            "fieldtype": "JSON",
+            "label": "Conditions"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Approval Workflow",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

@@ -1,0 +1,112 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "sop_document",
+        "version",
+        "revision_date",
+        "revised_by",
+        "column_break_1",
+        "approved_by",
+        "approval_date",
+        "rollback_available",
+        "section_break_1",
+        "changes_summary",
+        "changed_fields",
+        "previous_version_file"
+    ],
+    "fields": [
+        {
+            "fieldname": "sop_document",
+            "fieldtype": "Link",
+            "label": "SOP Document",
+            "options": "HDA SOP Document",
+            "reqd": 1
+        },
+        {
+            "fieldname": "version",
+            "fieldtype": "Int",
+            "label": "Version",
+            "reqd": 1
+        },
+        {
+            "fieldname": "revision_date",
+            "fieldtype": "Date",
+            "label": "Revision Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "revised_by",
+            "fieldtype": "Link",
+            "label": "Revised By",
+            "options": "User",
+            "reqd": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "approved_by",
+            "fieldtype": "Link",
+            "label": "Approved By",
+            "options": "User"
+        },
+        {
+            "fieldname": "approval_date",
+            "fieldtype": "Date",
+            "label": "Approval Date"
+        },
+        {
+            "default": "0",
+            "fieldname": "rollback_available",
+            "fieldtype": "Check",
+            "label": "Rollback Available"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "changes_summary",
+            "fieldtype": "Text Editor",
+            "label": "Changes Summary"
+        },
+        {
+            "fieldname": "changed_fields",
+            "fieldtype": "JSON",
+            "label": "Changed Fields"
+        },
+        {
+            "fieldname": "previous_version_file",
+            "fieldtype": "Attach",
+            "label": "Previous Version File"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA SOP Revision History",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

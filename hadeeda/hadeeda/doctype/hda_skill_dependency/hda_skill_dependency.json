@@ -1,0 +1,54 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "skill",
+        "dependent_skill",
+        "required_version",
+        "is_optional"
+    ],
+    "fields": [
+        {
+            "fieldname": "dependent_skill",
+            "fieldtype": "Link",
+            "label": "Dependent Skill",
+            "options": "HDA Skill",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "required_version",
+            "fieldtype": "Data",
+            "label": "Required Version",
+            "in_list_view": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "is_optional",
+            "fieldtype": "Check",
+            "label": "Optional",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "skill",
+            "fieldtype": "Link",
+            "label": "Parent Skill",
+            "options": "HDA Skill",
+            "hidden": 1
+        }
+    ],
+    "istable": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Skill Dependency",
+    "owner": "Administrator",
+    "permissions": [],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

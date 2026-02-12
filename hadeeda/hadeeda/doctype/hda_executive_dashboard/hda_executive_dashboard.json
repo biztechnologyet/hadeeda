@@ -1,0 +1,97 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "dashboard_name",
+        "auto_refresh_minutes",
+        "column_break_1",
+        "includes_skills",
+        "includes_sops",
+        "last_modified",
+        "section_break_1",
+        "widgets",
+        "layout",
+        "shared_with"
+    ],
+    "fields": [
+        {
+            "fieldname": "dashboard_name",
+            "fieldtype": "Data",
+            "label": "Dashboard Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "auto_refresh_minutes",
+            "fieldtype": "Int",
+            "label": "Auto Refresh (Minutes)",
+            "default": 30
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "default": "0",
+            "fieldname": "includes_skills",
+            "fieldtype": "Check",
+            "label": "Includes Skills Metrics"
+        },
+        {
+            "default": "0",
+            "fieldname": "includes_sops",
+            "fieldtype": "Check",
+            "label": "Includes SOP Metrics"
+        },
+        {
+            "fieldname": "last_modified",
+            "fieldtype": "Datetime",
+            "label": "Last Modified",
+            "read_only": 1
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "widgets",
+            "fieldtype": "JSON",
+            "label": "Widgets Config"
+        },
+        {
+            "fieldname": "layout",
+            "fieldtype": "JSON",
+            "label": "Layout Config"
+        },
+        {
+            "fieldname": "shared_with",
+            "fieldtype": "JSON",
+            "label": "Shared With"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Executive Dashboard",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

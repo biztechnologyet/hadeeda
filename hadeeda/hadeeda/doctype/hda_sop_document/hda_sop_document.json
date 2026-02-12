@@ -1,0 +1,124 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "title",
+        "sop_id",
+        "version",
+        "category",
+        "column_break_1",
+        "status",
+        "owner_name",
+        "effective_date",
+        "review_date",
+        "section_break_1",
+        "content",
+        "section_break_2",
+        "steps",
+        "roles_responsible"
+    ],
+    "fields": [
+        {
+            "fieldname": "title",
+            "fieldtype": "Data",
+            "label": "Title",
+            "reqd": 1
+        },
+        {
+            "fieldname": "sop_id",
+            "fieldtype": "Data",
+            "label": "SOP ID",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "version",
+            "fieldtype": "Data",
+            "label": "Version",
+            "default": "1.0"
+        },
+        {
+            "fieldname": "category",
+            "fieldtype": "Link",
+            "label": "Category",
+            "options": "HDA SOP Category"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Draft\nReview\nApproved\nObsolete",
+            "default": "Draft"
+        },
+        {
+            "fieldname": "owner_name",
+            "fieldtype": "Link",
+            "label": "Owner",
+            "options": "User"
+        },
+        {
+            "fieldname": "effective_date",
+            "fieldtype": "Date",
+            "label": "Effective Date"
+        },
+        {
+            "fieldname": "review_date",
+            "fieldtype": "Date",
+            "label": "Next Review Date"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "content",
+            "fieldtype": "Text Editor",
+            "label": "Content (Markdown)"
+        },
+        {
+            "fieldname": "section_break_2",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "steps",
+            "fieldtype": "JSON",
+            "label": "Structured Steps"
+        },
+        {
+            "fieldname": "roles_responsible",
+            "fieldtype": "JSON",
+            "label": "Roles Responsible"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA SOP Document",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1,
+    "title_field": "title"
+}

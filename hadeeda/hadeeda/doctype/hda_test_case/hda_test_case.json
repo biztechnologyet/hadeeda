@@ -1,0 +1,139 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "test_case_id",
+        "title",
+        "test_type",
+        "status",
+        "column_break_1",
+        "module",
+        "doctype_name",
+        "last_run",
+        "related_sop",
+        "related_skill",
+        "section_break_1",
+        "description",
+        "section_break_2",
+        "input_data",
+        "expected_output",
+        "actual_output"
+    ],
+    "fields": [
+        {
+            "fieldname": "test_case_id",
+            "fieldtype": "Data",
+            "label": "Test Case ID",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "title",
+            "fieldtype": "Data",
+            "label": "Title",
+            "reqd": 1
+        },
+        {
+            "fieldname": "test_type",
+            "fieldtype": "Select",
+            "label": "Test Type",
+            "options": "Unit\nIntegration\nE2E\nPerformance\nSecurity\nSkill Verification\nSOP Compliance",
+            "reqd": 1
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Not Run\nPassed\nFailed\nSkipped",
+            "default": "Not Run"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "module",
+            "fieldtype": "Link",
+            "label": "Module",
+            "options": "Module Def"
+        },
+        {
+            "fieldname": "doctype_name",
+            "fieldtype": "Link",
+            "label": "DocType",
+            "options": "DocType"
+        },
+        {
+            "fieldname": "last_run",
+            "fieldtype": "Datetime",
+            "label": "Last Run"
+        },
+        {
+            "fieldname": "related_sop",
+            "fieldtype": "Link",
+            "label": "Related SOP",
+            "options": "HDA SOP Document"
+        },
+        {
+            "fieldname": "related_skill",
+            "fieldtype": "Link",
+            "label": "Related Skill",
+            "options": "HDA Skill"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Text Editor",
+            "label": "Description"
+        },
+        {
+            "fieldname": "section_break_2",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "input_data",
+            "fieldtype": "JSON",
+            "label": "Input Data"
+        },
+        {
+            "fieldname": "expected_output",
+            "fieldtype": "JSON",
+            "label": "Expected Output"
+        },
+        {
+            "fieldname": "actual_output",
+            "fieldtype": "JSON",
+            "label": "Actual Output"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Test Case",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1,
+    "title_field": "title"
+}

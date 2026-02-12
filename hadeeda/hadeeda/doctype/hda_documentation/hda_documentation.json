@@ -1,0 +1,92 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "title",
+        "category",
+        "is_published",
+        "column_break_1",
+        "target_audience",
+        "version",
+        "section_break_1",
+        "content",
+        "related_doctypes"
+    ],
+    "fields": [
+        {
+            "fieldname": "title",
+            "fieldtype": "Data",
+            "label": "Title",
+            "reqd": 1
+        },
+        {
+            "fieldname": "category",
+            "fieldtype": "Select",
+            "label": "Category",
+            "options": "User Guide\nDeveloper Guide\nAPI Reference\nSystem Architecture\nSOP Manual\nSkill Documentation",
+            "reqd": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "is_published",
+            "fieldtype": "Check",
+            "label": "Is Published"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "target_audience",
+            "fieldtype": "Select",
+            "label": "Target Audience",
+            "options": "End User\nAdmin\nDeveloper\nAgent"
+        },
+        {
+            "fieldname": "version",
+            "fieldtype": "Data",
+            "label": "Version",
+            "default": "1.0"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "content",
+            "fieldtype": "Text Editor",
+            "label": "Content"
+        },
+        {
+            "fieldname": "related_doctypes",
+            "fieldtype": "JSON",
+            "label": "Related DocTypes"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Documentation",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

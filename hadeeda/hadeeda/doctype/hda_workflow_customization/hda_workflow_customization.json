@@ -1,0 +1,86 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "workflow_name",
+        "target_doctype",
+        "is_active",
+        "created_via_ai",
+        "section_break_1",
+        "workflow_state",
+        "transitions",
+        "conditions"
+    ],
+    "fields": [
+        {
+            "fieldname": "workflow_name",
+            "fieldtype": "Data",
+            "label": "Workflow Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "target_doctype",
+            "fieldtype": "Link",
+            "label": "Target DocType",
+            "options": "DocType",
+            "reqd": 1
+        },
+        {
+            "default": "1",
+            "fieldname": "is_active",
+            "fieldtype": "Check",
+            "label": "Is Active"
+        },
+        {
+            "default": "0",
+            "fieldname": "created_via_ai",
+            "fieldtype": "Check",
+            "label": "Created Via AI"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "workflow_state",
+            "fieldtype": "JSON",
+            "label": "Workflow State Definitions"
+        },
+        {
+            "fieldname": "transitions",
+            "fieldtype": "JSON",
+            "label": "Transitions"
+        },
+        {
+            "fieldname": "conditions",
+            "fieldtype": "JSON",
+            "label": "Conditions"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Workflow Customization",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

@@ -1,0 +1,114 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "agent",
+        "user",
+        "conversation_id",
+        "is_user",
+        "parent_conversation",
+        "section_break_1",
+        "message",
+        "context_summary",
+        "execution_log",
+        "column_break_1",
+        "tokens_used",
+        "sentiment_score"
+    ],
+    "fields": [
+        {
+            "fieldname": "agent",
+            "fieldtype": "Link",
+            "label": "Agent",
+            "options": "HDA Agent",
+            "reqd": 1
+        },
+        {
+            "fieldname": "user",
+            "fieldtype": "Link",
+            "label": "User",
+            "options": "User",
+            "reqd": 1
+        },
+        {
+            "fieldname": "conversation_id",
+            "fieldtype": "Data",
+            "label": "Conversation ID",
+            "read_only": 1
+        },
+        {
+            "default": "0",
+            "fieldname": "is_user",
+            "fieldtype": "Check",
+            "label": "Is User Message"
+        },
+        {
+            "fieldname": "parent_conversation",
+            "fieldtype": "Link",
+            "label": "Parent Conversation",
+            "options": "HDA Agent Conversation"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "message",
+            "fieldtype": "Text Editor",
+            "label": "Message",
+            "reqd": 1
+        },
+        {
+            "fieldname": "context_summary",
+            "fieldtype": "Text",
+            "label": "Context Summary"
+        },
+        {
+            "fieldname": "execution_log",
+            "fieldtype": "JSON",
+            "label": "Execution Log"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "tokens_used",
+            "fieldtype": "Int",
+            "label": "Tokens Used"
+        },
+        {
+            "fieldname": "sentiment_score",
+            "fieldtype": "Float",
+            "label": "Sentiment Score"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Agent Conversation",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1,
+    "title_field": "message"
+}

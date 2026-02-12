@@ -1,0 +1,119 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "kpi_name",
+        "category",
+        "current_value",
+        "target_value",
+        "unit",
+        "trend",
+        "column_break_1",
+        "threshold_red",
+        "threshold_green",
+        "linked_doctype",
+        "refresh_interval",
+        "skill_related",
+        "sop_related"
+    ],
+    "fields": [
+        {
+            "fieldname": "kpi_name",
+            "fieldtype": "Data",
+            "label": "KPI Name",
+            "reqd": 1
+        },
+        {
+            "fieldname": "category",
+            "fieldtype": "Select",
+            "label": "Category",
+            "options": "Financial\nOperational\nCustomer\nEmployee\nInnovation",
+            "reqd": 1
+        },
+        {
+            "fieldname": "current_value",
+            "fieldtype": "Float",
+            "label": "Current Value"
+        },
+        {
+            "fieldname": "target_value",
+            "fieldtype": "Float",
+            "label": "Target Value"
+        },
+        {
+            "fieldname": "unit",
+            "fieldtype": "Data",
+            "label": "Unit"
+        },
+        {
+            "fieldname": "trend",
+            "fieldtype": "Select",
+            "label": "Trend",
+            "options": "Up\nDown\nStable"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "threshold_red",
+            "fieldtype": "Float",
+            "label": "Red Threshold (Below)"
+        },
+        {
+            "fieldname": "threshold_green",
+            "fieldtype": "Float",
+            "label": "Green Threshold (Above)"
+        },
+        {
+            "fieldname": "linked_doctype",
+            "fieldtype": "Link",
+            "label": "Linked DocType",
+            "options": "DocType"
+        },
+        {
+            "default": "60",
+            "fieldname": "refresh_interval",
+            "fieldtype": "Int",
+            "label": "Refresh Interval (Minutes)"
+        },
+        {
+            "fieldname": "skill_related",
+            "fieldtype": "Link",
+            "label": "Related Skill",
+            "options": "HDA Skill"
+        },
+        {
+            "fieldname": "sop_related",
+            "fieldtype": "Link",
+            "label": "Related SOP",
+            "options": "HDA SOP Document"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA KPI Dashboard",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

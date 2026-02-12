@@ -1,0 +1,98 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "timestamp",
+        "status",
+        "method",
+        "column_break_1",
+        "webhook_url",
+        "response_code",
+        "retry_count",
+        "section_break_1",
+        "payload",
+        "response_body"
+    ],
+    "fields": [
+        {
+            "fieldname": "timestamp",
+            "fieldtype": "Datetime",
+            "label": "Timestamp",
+            "reqd": 1
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Success\nFailed\nRetrying",
+            "reqd": 1
+        },
+        {
+            "fieldname": "method",
+            "fieldtype": "Select",
+            "label": "Method",
+            "options": "GET\nPOST\nPUT\nDELETE\nPATCH",
+            "default": "POST"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "webhook_url",
+            "fieldtype": "Data",
+            "label": "Webhook URL"
+        },
+        {
+            "fieldname": "response_code",
+            "fieldtype": "Int",
+            "label": "Response Code"
+        },
+        {
+            "default": "0",
+            "fieldname": "retry_count",
+            "fieldtype": "Int",
+            "label": "Retry Count"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "payload",
+            "fieldtype": "JSON",
+            "label": "Payload"
+        },
+        {
+            "fieldname": "response_body",
+            "fieldtype": "Text",
+            "label": "Response Body"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Webhook Log",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 0
+}

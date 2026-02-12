@@ -1,0 +1,103 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "integration_type",
+        "is_active",
+        "column_break_1",
+        "test_status",
+        "last_tested",
+        "section_break_1",
+        "config_key",
+        "config_value",
+        "section_break_2",
+        "skills_sync_enabled",
+        "skills_repo_url"
+    ],
+    "fields": [
+        {
+            "fieldname": "integration_type",
+            "fieldtype": "Select",
+            "label": "Integration Type",
+            "options": "OpenAI\nClaude\nLocal LLM\nTelegram\nWhatsApp\nEmail\nSMS\nPayment Gateway\nCRM\nE-commerce\nSkills Repository",
+            "reqd": 1
+        },
+        {
+            "default": "1",
+            "fieldname": "is_active",
+            "fieldtype": "Check",
+            "label": "Is Active"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "test_status",
+            "fieldtype": "Select",
+            "label": "Test Status",
+            "options": "Not Tested\nWorking\nFailed",
+            "default": "Not Tested"
+        },
+        {
+            "fieldname": "last_tested",
+            "fieldtype": "Datetime",
+            "label": "Last Tested"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "config_key",
+            "fieldtype": "Data",
+            "label": "Config Key"
+        },
+        {
+            "fieldname": "config_value",
+            "fieldtype": "Password",
+            "label": "Config Value"
+        },
+        {
+            "fieldname": "section_break_2",
+            "fieldtype": "Section Break"
+        },
+        {
+            "default": "0",
+            "fieldname": "skills_sync_enabled",
+            "fieldtype": "Check",
+            "label": "Skills Sync Enabled"
+        },
+        {
+            "fieldname": "skills_repo_url",
+            "fieldtype": "Data",
+            "label": "Skills Repository URL"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Integration Config",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

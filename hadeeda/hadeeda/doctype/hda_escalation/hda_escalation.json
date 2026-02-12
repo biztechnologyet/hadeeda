@@ -1,0 +1,125 @@
+{
+    "actions": [],
+    "creation": "2024-05-20 10:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "original_task",
+        "escalated_from_agent",
+        "priority",
+        "column_break_1",
+        "escalated_to",
+        "status",
+        "resolution_date",
+        "section_break_1",
+        "reason",
+        "skill_failure",
+        "sop_violation",
+        "column_break_2",
+        "resolution",
+        "resolved_by"
+    ],
+    "fields": [
+        {
+            "fieldname": "original_task",
+            "fieldtype": "Link",
+            "label": "Original Task",
+            "options": "Task"
+        },
+        {
+            "fieldname": "escalated_from_agent",
+            "fieldtype": "Link",
+            "label": "Escalated From Agent",
+            "options": "HDA Agent"
+        },
+        {
+            "fieldname": "priority",
+            "fieldtype": "Select",
+            "label": "Priority",
+            "options": "Low\nMedium\nHigh\nCritical",
+            "default": "Medium"
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "escalated_to",
+            "fieldtype": "Link",
+            "label": "Escalated To",
+            "options": "User"
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "label": "Status",
+            "options": "Open\nResolved\nClosed",
+            "default": "Open"
+        },
+        {
+            "fieldname": "resolution_date",
+            "fieldtype": "Datetime",
+            "label": "Resolution Date"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "reason",
+            "fieldtype": "Text",
+            "label": "Escalation Reason"
+        },
+        {
+            "fieldname": "skill_failure",
+            "fieldtype": "Link",
+            "label": "Skill Failure",
+            "options": "HDA Skill"
+        },
+        {
+            "fieldname": "sop_violation",
+            "fieldtype": "Link",
+            "label": "SOP Violation",
+            "options": "HDA SOP Document"
+        },
+        {
+            "fieldname": "column_break_2",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "resolution",
+            "fieldtype": "Text",
+            "label": "Resolution"
+        },
+        {
+            "fieldname": "resolved_by",
+            "fieldtype": "Link",
+            "label": "Resolved By",
+            "options": "User"
+        }
+    ],
+    "index_web_pages_for_search": 1,
+    "links": [],
+    "modified": "2024-05-20 10:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Hadeeda",
+    "name": "HDA Escalation",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}
