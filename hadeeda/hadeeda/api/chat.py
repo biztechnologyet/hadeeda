@@ -39,9 +39,6 @@ def get_chat_js():
 """
     frappe.response['type'] = 'text'
     frappe.response['text'] = js_content
-    frappe.response['headers'] = {
-        'Content-Type': 'application/javascript'
-    }
 
 @frappe.whitelist(allow_guest=True)
 def get_chat_css():
@@ -56,7 +53,5 @@ def get_chat_css():
 """
     frappe.response['type'] = 'text'
     frappe.response['text'] = css_content
-    frappe.response['headers'] = {
-        'Content-Type': 'text/css'
-    }
+
 
