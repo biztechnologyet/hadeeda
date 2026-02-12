@@ -13,7 +13,6 @@ def run_cmd(client, cmd, timeout=300):
     out = stdout.read().decode('utf-8', errors='replace').strip()
     err = stderr.read().decode('utf-8', errors='replace').strip()
     if out:
-        # Safe print for Windows console
         safe_out = out[-1000:].encode('ascii', errors='replace').decode('ascii')
         print(f"OUT: {safe_out}")
     if err:
@@ -30,48 +29,55 @@ def main():
         client.connect(HOST, 22, USER, PASSWORD)
         print("Connected!")
 
-        # Step 1: Remove existing hadeeda completely
+        # Step 1: Remove existing hadeeda completely (files and DB)
         print("\n=== STEP 1: Clean old installation ===")
-        run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench --site frontend remove-app hadeeda --force 2>/dev/null; rm -rf apps/hadeeda; echo CLEANED'")
+        db_clean_py = """
+import frappe
+if frappe.db.exists('Module Def', 'Hadeeda'):
+    frappe.delete_doc('Module Def', 'Hadeeda', force=True)
+    print('Deleted Module Def')
+dt = frappe.get_all('DocType', filters={'module': 'Hadeeda'}, pluck='name')
+for d in dt:
+    frappe.delete_doc('DocType', d, force=True)
+    print(f'Deleted DocType: {d}')
+if frappe.db.exists('Workspace', 'Hadeeda'):
+    frappe.delete_doc('Workspace', 'Hadeeda', force=True)
+    print('Deleted Workspace')
+frappe.db.commit()
+"""
+        with client.open_sftp() as sftp:
+            with sftp.file('/home/ethiobiz/clean_db.py', 'w') as f:
+                f.write(db_clean_py)
+        
+        run_cmd(client, f"echo 'Admin@123' | sudo -S docker cp /home/ethiobiz/clean_db.py {BACKEND}:/tmp/clean_db.py")
+        run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec -i {BACKEND} bash -c 'bench --site frontend console < /tmp/clean_db.py'")
+        run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench --site frontend remove-app hadeeda --force || true; rm -rf apps/hadeeda; echo CLEANED'")
 
-        # Step 2: Use bench get-app (the correct Frappe way)
-        print("\n=== STEP 2: bench get-app (clone + pip install) ===")
-        out, err, status = run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench get-app https://github.com/biztechnologyet/hadeeda.git --branch main'", timeout=300)
+        # Step 2: Remove app via bench and delete folder
+        print("\n=== STEP 2: Remove app from bench ===")
+        run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench --site frontend remove-app hadeeda --force || true; rm -rf apps/hadeeda'")
 
-        # Step 3: Verify app is registered
-        print("\n=== STEP 3: Verify app files ===")
-        run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'ls /home/frappe/frappe-bench/apps/hadeeda/ && python -c \"import hadeeda; print(hadeeda)\"'")
+        # Step 3: bench get-app
+        print("\n=== STEP 3: bench get-app ===")
+        run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench get-app https://github.com/biztechnologyet/hadeeda.git --branch main'", timeout=300)
 
-        # Step 4: Install on site
-        print("\n=== STEP 4: Install app on site ===")
-        out, err, status = run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench --site frontend install-app hadeeda'", timeout=120)
+        # Step 4: install-app
+        print("\n=== STEP 4: bench install-app ===")
+        run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench --site frontend install-app hadeeda'", timeout=120)
 
-        # Step 5: Migrate
-        print("\n=== STEP 5: Migrate ===")
-        out, err, status = run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench --site frontend migrate'", timeout=300)
+        # Step 5: migrate
+        print("\n=== STEP 5: bench migrate ===")
+        run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench --site frontend migrate'", timeout=300)
 
-        # Step 6: Clear cache
-        print("\n=== STEP 6: Clear cache ===")
-        run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench --site frontend clear-cache'")
-
-        # Step 7: Verify
-        print("\n=== STEP 7: Verify installation ===")
-        out, err, _ = run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench --site frontend list-apps'")
-        print(f"\nInstalled apps: {out}")
-
-        # Step 8: Count doctypes using bench console
-        print("\n=== STEP 8: Count Hadeeda doctypes ===")
-        count_cmd = '''cd /home/frappe/frappe-bench && echo "docs=frappe.get_all('DocType',filters={'module':'Hadeeda'},pluck='name'); print('Hadeeda doctypes:',len(docs))" | bench --site frontend console'''
-        out, err, _ = run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c '{count_cmd}'", timeout=30)
-        print(f"\nDoctypes result: {out}")
+        # Step 6: Verify
+        print("\n=== STEP 6: Verify installation ===")
+        out, _, _ = run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench --site frontend list-apps'")
+        print(f"\nResult: {out}")
 
     except Exception as e:
         print(f"Error: {e}")
-        import traceback
-        traceback.print_exc()
     finally:
         client.close()
-        print("\nDone.")
 
 if __name__ == "__main__":
     main()
