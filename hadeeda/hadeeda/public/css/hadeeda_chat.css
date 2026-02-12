@@ -1,0 +1,6 @@
+/* Custom styling for Hadeeda Chat */
+@import url('https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css');
+
+.n8n-chat-widget {
+    z-index: 1050 !important; /* Above Desk modals and sidebars */
+}

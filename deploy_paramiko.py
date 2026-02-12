@@ -69,10 +69,14 @@ frappe.db.commit()
         print("\n=== STEP 5: bench migrate ===")
         run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench --site frontend migrate'", timeout=300)
 
-        # Step 6: Verify
+        # Step 6: Verify installation
         print("\n=== STEP 6: Verify installation ===")
         out, _, _ = run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c 'cd /home/frappe/frappe-bench && bench --site frontend list-apps'")
-        print(f"\nResult: {out}")
+        print(f"\nInstalled apps: {out}")
+        
+        count_py = "import frappe; print('COUNT:', len(frappe.get_all('DocType', filters={'module': 'Hadeeda'})))"
+        out_count, _, _ = run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec -i {BACKEND} bash -c 'bench --site frontend console <<< \"{count_py}\"'")
+        print(f"\nDoctype Count: {out_count}")
 
     except Exception as e:
         print(f"Error: {e}")
@@ -80,4 +84,21 @@ frappe.db.commit()
         client.close()
 
 if __name__ == "__main__":
-    main()
+    import sys
+    if len(sys.argv) > 2 and sys.argv[1] == "--execute":
+        cmd = sys.argv[2]
+        is_host = "--host" in sys.argv
+        client = paramiko.SSHClient()
+        client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        try:
+            client.connect(HOST, 22, USER, PASSWORD)
+            if is_host:
+                print(f"Executing on HOST: {cmd}")
+                run_cmd(client, f"echo 'Admin@123' | sudo -S {cmd}")
+            else:
+                print(f"Executing in {BACKEND}: {cmd}")
+                run_cmd(client, f"echo 'Admin@123' | sudo -S docker exec {BACKEND} bash -c '{cmd}'")
+        finally:
+            client.close()
+    else:
+        main()
