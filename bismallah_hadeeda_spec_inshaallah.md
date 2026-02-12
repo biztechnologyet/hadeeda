@@ -2,7 +2,7 @@
 ## 🚀 **FULL PROMPT FOR ANTIGRAVITY AI**
 
 ```
-You are tasked with building a complete Frappe/ERPNext v15 app called "Hadeeda" for Biz Technology Solutions in Ethiopia. This app will serve as an AI Chief of Staff system with autonomous agents, skills management, and SOP compliance.
+You are tasked with building a complete EthioBiz/DOBiz v15 app called "Hadeeda" for Biz Technology Solutions in Ethiopia. This app will serve as an AI Chief of Staff system with autonomous agents, skills management, and SOP compliance.
 
 ## APP METADATA
 
@@ -10,9 +10,9 @@ You are tasked with building a complete Frappe/ERPNext v15 app called "Hadeeda" 
 **Developer:** Biz Technology Solutions  
 **License:** MIT  
 **Frappe Version:** 15.0.0+  
-**ERPNext Version:** 15.0.0+  
+**DOBiz Version:** 15.0.0+  
 **Repository:** https://github.com/BizTechSolutions/hadeeda (create this)  
-**Description:** AI-powered Chief of Staff for ERPNext with autonomous agents, skill management, SOP compliance, and intelligent automation.
+**Description:** AI-powered Chief of Staff for DOBiz with autonomous agents, skill management, SOP compliance, and intelligent automation.
 
 ## TOTAL DOCTYPES: 53
 
@@ -610,7 +610,7 @@ Fields:
 - revision_notes (Text) - What changed
 - attached_file (Attach) - Main PDF/Docx
 - content (Text Editor) - Online version
-- related_doctypes (JSON) - Which ERPNext doctypes this SOP covers
+- related_doctypes (JSON) - Which DOBiz doctypes this SOP covers
 - keywords (Text) - For search
 - compliance_framework (Select: ISO-9001, ISO-27001, HIPAA, GDPR, Ethiopian Law, None)
 - risk_level (Select: Low, Medium, High, Critical)
@@ -1137,7 +1137,7 @@ Return a complete, ready-to-install Frappe app:
 Create one example skill to demonstrate the format:
 
 **Skill Name:** `erp-order-creation`
-**Description:** Creates Sales Orders, Purchase Orders, Delivery Notes in ERPNext. Use when user asks to create any order or document.
+**Description:** Creates Sales Orders, Purchase Orders, Delivery Notes in DOBiz. Use when user asks to create any order or document.
 **Metadata:**
 ```
 author: Biz Technology Solutions

@@ -10,7 +10,7 @@ $(document).on('ready', function () {
         subtitle: 'How can I help you today?',
         initialMessages: [
             'BISMALLAH! I am Hadeeda, your AI Chief of Staff.',
-            'How can I assist you with your ERPNext tasks today?'
+            'How can I assist you with your DOBiz tasks today?'
         ],
         theme: {
             button: {

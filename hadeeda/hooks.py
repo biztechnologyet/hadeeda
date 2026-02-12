@@ -1,7 +1,7 @@
 app_name = "hadeeda"
 app_title = "Hadeeda"
-app_publisher = "Biz Technology Solutions"
-app_description = "AI-powered Chief of Staff for ERPNext with autonomous agents, skill management, SOP compliance, and intelligent automation."
+app_publisher = "EthioBiz Team"
+app_description = "AI-powered Chief of Staff for DOBiz with autonomous agents, skill management, SOP compliance, and intelligent automation."
 app_email = "support@biztech.et"
 app_license = "MIT"
 
