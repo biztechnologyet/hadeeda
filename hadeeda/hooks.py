@@ -25,8 +25,8 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = "/api/method/hadeeda.api.chat.get_chat_css"
-app_include_js = "/api/method/hadeeda.api.chat.get_chat_js"
+app_include_css = "/api/method/hadeeda.chat.get_chat_css"
+app_include_js = "/api/method/hadeeda.chat.get_chat_js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/hadeeda/css/hadeeda.css"
