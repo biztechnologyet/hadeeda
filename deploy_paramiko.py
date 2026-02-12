@@ -85,7 +85,20 @@ frappe.db.commit()
 
 if __name__ == "__main__":
     import sys
-    if len(sys.argv) > 2 and sys.argv[1] == "--execute":
+    if len(sys.argv) > 3 and sys.argv[1] == "--upload":
+        local_path = sys.argv[2]
+        remote_path = sys.argv[3]
+        client = paramiko.SSHClient()
+        client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        try:
+            client.connect(HOST, 22, USER, PASSWORD)
+            print(f"Uploading {local_path} to {remote_path}...")
+            with client.open_sftp() as sftp:
+                sftp.put(local_path, remote_path)
+            print("Upload complete.")
+        finally:
+            client.close()
+    elif len(sys.argv) > 2 and sys.argv[1] == "--execute":
         cmd = sys.argv[2]
         is_host = "--host" in sys.argv
         client = paramiko.SSHClient()
