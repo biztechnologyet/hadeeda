@@ -1,0 +1,12 @@
+include MANIFEST.in
+include requirements.txt
+include *.md
+include *.py
+include *.txt
+recursive-include hadeeda *.py
+recursive-include hadeeda *.json
+recursive-include hadeeda *.js
+recursive-include hadeeda *.css
+recursive-include hadeeda *.html
+recursive-include hadeeda *.md
+recursive-include hadeeda *.txt
